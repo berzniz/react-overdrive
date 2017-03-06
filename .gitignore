@@ -1,0 +1,16 @@
+# Eclipse project files
+.project
+.settings
+
+# IntelliJ project files
+.idea
+*.iml
+*.ipr
+*.iws
+
+# Mac files
+*.DS_Store
+
+# Node
+node_modules
+.next
