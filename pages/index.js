@@ -9,8 +9,10 @@ const box = css({
 });
 
 const image = css({
-    width: '60px',
-    height: '60px',
+    boxSizing: 'border-box',
+    background: '#fff',
+    width: '80px',
+    height: '80px',
     borderRadius: '50%',
     border: '1px solid #ccc',
     padding: '5px',

@@ -20,30 +20,63 @@ class Overdrive extends React.Component {
         const bodyElement = document.createElement('div');
         window.document.body.appendChild(bodyElement);
 
+        prevPosition.top += window.scrollY;
         const nextPosition = this.getPosition(true);
+        const targetScaleX = prevPosition.width / nextPosition.width;
+        const targetScaleY = prevPosition.height / nextPosition.height;
+        const targetTransitionX = prevPosition.top / nextPosition.top;
+        const targetTransitionY = prevPosition.left / nextPosition.left;
 
         const sourceStart = React.cloneElement(prevElement, {
             key: '1',
             className: transition.toString(),
-            style: {...prevPosition, opacity: 1, top: prevPosition.top + window.scrollY}
+            style: {
+                ...prevPosition,
+                opacity: 1,
+                transform: 'scaleX(1) scaleY(1)',
+                transformOrigin: '0 0'
+            }
         });
 
         const sourceEnd = React.cloneElement(prevElement, {
             key: '1',
             className: transition.toString(),
-            style: {...nextPosition, opacity: 0}
+            style: {
+                ...prevPosition,
+                top: nextPosition.top,
+                left: nextPosition.left,
+                margin: nextPosition.margin,
+                borderRadius: nextPosition.borderRadius,
+                opacity: 0,
+                transform: `scaleX(${1/targetScaleX}) scaleY(${1/targetScaleY})`,
+                transformOrigin: '0 0'
+            }
         });
 
         const targetStart = React.cloneElement(this.props.children, {
             key: '2',
             className: transition.toString(),
-            style: {...prevPosition, opacity: 0, top: prevPosition.top + window.scrollY}
+            style: {
+                ...nextPosition,
+                top: prevPosition.top,
+                left: prevPosition.left,
+                margin: prevPosition.margin,
+                borderRadius: prevPosition.borderRadius,
+                opacity: 0,
+                transform: `scaleX(${targetScaleX}) scaleY(${targetScaleY})`,
+                transformOrigin: '0 0'
+            }
         });
 
         const targetEnd = React.cloneElement(this.props.children, {
             key: '2',
             className: transition.toString(),
-            style: {...nextPosition, opacity: 1}
+            style: {
+                ...nextPosition,
+                opacity: 1,
+                transform: 'scaleX(1) scaleY(1)',
+                transformOrigin: '0 0'
+            }
         });
 
         const start = <div>{sourceStart}{targetStart}</div>;
@@ -51,6 +84,7 @@ class Overdrive extends React.Component {
 
         this.setState({loading: true});
         ReactDOM.render(start, bodyElement);
+
         setTimeout(() => {
             ReactDOM.render(end, bodyElement);
             setTimeout(() => {
@@ -103,6 +137,7 @@ class Overdrive extends React.Component {
             left: (rect.left - marginLeft),
             width: rect.width,
             height: rect.height,
+            margin: computedStyle.margin,
             borderRadius: computedStyle.borderRadius,
             position: 'absolute'
         };
