@@ -1,5 +1,5 @@
 import React from 'react'
-import Overdrive from './overdrive'
+import Overdrive from '../lib/overdrive'
 import Link from 'next/link'
 import {css} from 'glamor'
 
