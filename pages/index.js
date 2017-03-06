@@ -2,12 +2,6 @@ import Overdrive from './overdrive'
 import Link from 'next/link'
 import {css} from 'glamor'
 
-const box = css({
-    width: '50px',
-    height: '50px',
-    background: '#3cafe4'
-});
-
 const image = css({
     boxSizing: 'border-box',
     background: '#fff',
@@ -20,6 +14,7 @@ const image = css({
 });
 
 const container = css({
+    marginTop: '200px',
     textAlign: 'center',
     ' a': {
         display: 'inline-block'
@@ -28,40 +23,35 @@ const container = css({
 
 const page = () => {
     return (
-        <div>
-            <h1 id="header">Page 1</h1>
-            <Link href="/another"><a id="link">Page 2</a></Link>
-            <Overdrive id="box">
-                <div {...box}></div>
-            </Overdrive>
-            <Overdrive id="h">
-                <h1>Hi</h1>
-            </Overdrive>
+        <div {...container}>
+            <h1>Best character?</h1>
+            <Link href="/character?id=bender&name=Bender">
+                <a>
+                    <Overdrive id="bender">
+                        <img {...image} src="/static/bender.jpg"/>
+                    </Overdrive>
+                </a>
+            </Link>
 
-            <div {...container}>
-                <Link href="/bender">
-                    <a>
-                        <Overdrive id="bender">
-                            <img {...image} src="/static/bender_small.jpg"/>
-                        </Overdrive>
-                    </a>
-                </Link>
-
-                <Link href="/face2">
-                    <a>
-                        <Overdrive id="face2">
-                            <img {...image} src="/static/fry.jpg"/>
-                        </Overdrive>
-                    </a>
-                </Link>
-                <Link href="/face3">
-                    <a>
-                        <Overdrive id="face3">
-                            <img {...image} src="/static/leela_small.jpg"/>
-                        </Overdrive>
-                    </a>
-                </Link>
-            </div>
+            <Link href="/character?id=fry&name=Fry">
+                <a>
+                    <Overdrive id="fry">
+                        <img {...image} src="/static/fry.jpg"/>
+                    </Overdrive>
+                </a>
+            </Link>
+            <Link href="/character?id=leela&name=Leela">
+                <a>
+                    <Overdrive id="leela">
+                        <img {...image} src="/static/leela.jpg"/>
+                    </Overdrive>
+                </a>
+            </Link>
+            <p>
+                This is a small demo of <strong><em>react-overdrive</em></strong>, creating a magic-move experience while routing.
+                <br/>
+                <em>(alpha version should be out soon)</em>
+            </p>
         </div>
     );
 };

@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM  from 'react-dom'
 import {css} from 'glamor';
 
-const defaultSpeed = 500;
+const defaultSpeed = 200;
 const components = {};
 
 class Overdrive extends React.Component {
@@ -24,8 +24,8 @@ class Overdrive extends React.Component {
         const nextPosition = this.getPosition(true);
         const targetScaleX = prevPosition.width / nextPosition.width;
         const targetScaleY = prevPosition.height / nextPosition.height;
-        const targetTransitionX = prevPosition.top / nextPosition.top;
-        const targetTransitionY = prevPosition.left / nextPosition.left;
+        const targetTranslateX = prevPosition.left - nextPosition.left;
+        const targetTranslateY = prevPosition.top - nextPosition.top;
 
         const sourceStart = React.cloneElement(prevElement, {
             key: '1',
@@ -33,7 +33,7 @@ class Overdrive extends React.Component {
             style: {
                 ...prevPosition,
                 opacity: 1,
-                transform: 'scaleX(1) scaleY(1)',
+                transform: 'scaleX(1) scaleY(1) translateX(0px) translateY(0px)',
                 transformOrigin: '0 0'
             }
         });
@@ -43,12 +43,10 @@ class Overdrive extends React.Component {
             className: transition.toString(),
             style: {
                 ...prevPosition,
-                top: nextPosition.top,
-                left: nextPosition.left,
                 margin: nextPosition.margin,
                 borderRadius: nextPosition.borderRadius,
                 opacity: 0,
-                transform: `scaleX(${1/targetScaleX}) scaleY(${1/targetScaleY})`,
+                transform: `matrix(${1/targetScaleX}, 0, 0, ${1/targetScaleY}, ${-targetTranslateX}, ${-targetTranslateY})`,
                 transformOrigin: '0 0'
             }
         });
@@ -58,12 +56,10 @@ class Overdrive extends React.Component {
             className: transition.toString(),
             style: {
                 ...nextPosition,
-                top: prevPosition.top,
-                left: prevPosition.left,
                 margin: prevPosition.margin,
                 borderRadius: prevPosition.borderRadius,
                 opacity: 0,
-                transform: `scaleX(${targetScaleX}) scaleY(${targetScaleY})`,
+                transform: `matrix(${targetScaleX}, 0, 0, ${targetScaleY}, ${targetTranslateX}, ${targetTranslateY})`,
                 transformOrigin: '0 0'
             }
         });
@@ -74,7 +70,7 @@ class Overdrive extends React.Component {
             style: {
                 ...nextPosition,
                 opacity: 1,
-                transform: 'scaleX(1) scaleY(1)',
+                transform: 'scaleX(1) scaleY(1) translateX(0px) translateY(0px)',
                 transformOrigin: '0 0'
             }
         });
