@@ -15,10 +15,10 @@ const image = css({
 const page = () => {
     return (
         <div>
-            <h1 id="header">Face 1</h1>
+            <h1 id="header">Bender</h1>
             <Link href="/"><a id="link">Home</a></Link>
             <div>
-                <Overdrive id="face1">
+                <Overdrive id="bender">
                     <img {...image} src="/static/bender.jpg"/>
                 </Overdrive>
             </div>

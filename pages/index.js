@@ -17,6 +17,13 @@ const image = css({
     margin: '10px'
 });
 
+const container = css({
+    textAlign: 'center',
+    ' a': {
+        display: 'inline-block'
+    }
+});
+
 const page = () => {
     return (
         <div>
@@ -29,24 +36,24 @@ const page = () => {
                 <h1>Hi</h1>
             </Overdrive>
 
-            <div style={{textAlign: 'center'}}>
-                <Link href="/face1">
-                    <a style={{display: 'inline-block'}}>
-                        <Overdrive id="face1">
+            <div {...container}>
+                <Link href="/bender">
+                    <a>
+                        <Overdrive id="bender">
                             <img {...image} src="/static/bender_small.jpg"/>
                         </Overdrive>
                     </a>
                 </Link>
 
                 <Link href="/face2">
-                    <a style={{display: 'inline-block'}}>
+                    <a>
                         <Overdrive id="face2">
                             <img {...image} src="/static/fry.jpg"/>
                         </Overdrive>
                     </a>
                 </Link>
                 <Link href="/face3">
-                    <a style={{display: 'inline-block'}}>
+                    <a>
                         <Overdrive id="face3">
                             <img {...image} src="/static/leela_small.jpg"/>
                         </Overdrive>
