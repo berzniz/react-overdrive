@@ -22,7 +22,7 @@ const page = ({url}) => {
         <div>
             <div {...container}>
                 <Overdrive id={url.query.id}>
-                    <img {...image} src={`/static/${url.query.image}`}/>
+                    <img {...image} src={`https://cdn.filestackcontent.com/${url.query.image}`}/>
                 </Overdrive>
                 <h1>{url.query.name}!</h1>
                 <Link href="/"><a id="link">Back</a></Link>

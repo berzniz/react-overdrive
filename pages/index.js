@@ -45,32 +45,32 @@ class page extends React.Component {
         return (
             <div {...container}>
                 <h1>Best character?</h1>
-                <Link href="/character?id=bender&name=Bender&image=bender.jpg">
+                <Link href="/character?id=bender&name=Bender&image=40Wzdn4OQbi2ncxkG96z">
                     <a>
                         <Overdrive id="bender">
-                            <img {...image} src="/static/bender.jpg"/>
+                            <img {...image} src="https://cdn.filestackcontent.com/40Wzdn4OQbi2ncxkG96z"/>
                         </Overdrive>
                     </a>
                 </Link>
 
-                <Link href="/character?id=fry&name=Fry&image=fry.jpg">
+                <Link href="/character?id=fry&name=Fry&image=zbglqWZQAyYO5vsHqIbw">
                     <a>
                         <Overdrive id="fry">
-                            <img {...image} src="/static/fry.jpg"/>
+                            <img {...image} src="https://cdn.filestackcontent.com/zbglqWZQAyYO5vsHqIbw"/>
                         </Overdrive>
                     </a>
                 </Link>
-                <Link href="/character?id=leela&name=Leela&image=leela.jpg">
+                <Link href="/character?id=leela&name=Leela&image=klwhl9wXRIqRTGWFNoBT">
                     <a>
                         <Overdrive id="leela">
-                            <img {...image} src="/static/leela.jpg"/>
+                            <img {...image} src="https://cdn.filestackcontent.com/klwhl9wXRIqRTGWFNoBT"/>
                         </Overdrive>
                     </a>
                 </Link>
-                <Link href="/character?id=zoidberg&name=Zoidberg&image=zoidberg.png">
+                <Link href="/character?id=zoidberg&name=Zoidberg&image=6xL1j1OQDC4VLBBLieN7">
                     <a>
                         <Overdrive id="zoidberg">
-                            <img {...image} src="/static/zoidberg.png"/>
+                            <img {...image} src="https://cdn.filestackcontent.com/6xL1j1OQDC4VLBBLieN7"/>
                         </Overdrive>
                     </a>
                 </Link>

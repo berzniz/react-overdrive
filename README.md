@@ -42,7 +42,15 @@ const pageB = (props) => (
 
 Now route between the pages.
 
+# Browser Support
+
+Tested on:
+- Chrome
+- Firefox
+- Safari
+- Mobile Safari (iOS)
+- IE (should work from IE9 and above, not tested yet)
+
 # Todo
 - [ ] Publish npm module
-- [ ] Add browser support (currently tested on Chrome + Firefox, Safari (Mac and iOS) doesn't work well yet
 - [ ] Add proper documentation
