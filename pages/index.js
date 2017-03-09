@@ -82,7 +82,7 @@ class page extends React.Component {
                 </p>
 
                 <p>
-                    This is a small demo of <strong><em>react-overdrive</em></strong>, creating a magic-move experience
+                    This is a small demo of <a href="https://github.com/berzniz/react-overdrive">react-overdrive</a>, creating a magic-move experience
                     while routing.
                     <br/>
                     <em>(alpha version should be out soon)</em>
