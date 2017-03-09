@@ -67,7 +67,7 @@ class page extends React.Component {
                 <h1>Best character?</h1>
 
                 {characters.map(character => (
-                    <Link key={Math.random()}
+                    <Link key={character.id}
                           href={`/character?id=${character.id}&name=${character.name}&image=${character.image}`}>
                         <a>
                             <Overdrive id={character.id}>
