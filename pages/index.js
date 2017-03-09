@@ -22,58 +22,65 @@ const container = css({
     }
 });
 
-const api = css({
-    maxWidth: '400px'
-});
+const characters = [
+    {
+        id: 'bender',
+        name: 'Bender',
+        image: '40Wzdn4OQbi2ncxkG96z'
+    },
+    {
+        id: 'fry',
+        name: 'Fry',
+        image: 'zbglqWZQAyYO5vsHqIbw'
+    },
+    {
+        id: 'leela',
+        name: 'Leela',
+        image: 'klwhl9wXRIqRTGWFNoBT'
+    },
+    {
+        id: 'zoidberg',
+        name: 'Zoidberg',
+        image: '6xL1j1OQDC4VLBBLieN7'
+    }
+];
 
 class page extends React.Component {
-    __componentDidMount() {
-        const images = [
-            '/static/bender.gif',
-            '/static/fry.gif',
-            '/static/leela.gif',
-            '/static/zoidberg.gif'
-        ];
-        for (let i = 0; i < images.length; ++i) {
-            const img = document.createElement('img');
-            img.src = images[i];
+    constructor(props) {
+        super(props);
+        this.state = {characters};
+    }
+
+    shuffleCharacters() {
+        const characters = [...this.state.characters];
+        for (let i = characters.length; i; i--) {
+            let j = Math.floor(Math.random() * i);
+            [characters[i - 1], characters[j]] = [characters[j], characters[i - 1]];
         }
-        console.log('hi!')
+        this.setState({characters});
     }
 
     render() {
+        const {characters} = this.state;
         return (
             <div {...container}>
                 <h1>Best character?</h1>
-                <Link href="/character?id=bender&name=Bender&image=40Wzdn4OQbi2ncxkG96z">
-                    <a>
-                        <Overdrive id="bender">
-                            <img {...image} src="https://cdn.filestackcontent.com/40Wzdn4OQbi2ncxkG96z"/>
-                        </Overdrive>
-                    </a>
-                </Link>
 
-                <Link href="/character?id=fry&name=Fry&image=zbglqWZQAyYO5vsHqIbw">
-                    <a>
-                        <Overdrive id="fry">
-                            <img {...image} src="https://cdn.filestackcontent.com/zbglqWZQAyYO5vsHqIbw"/>
-                        </Overdrive>
-                    </a>
-                </Link>
-                <Link href="/character?id=leela&name=Leela&image=klwhl9wXRIqRTGWFNoBT">
-                    <a>
-                        <Overdrive id="leela">
-                            <img {...image} src="https://cdn.filestackcontent.com/klwhl9wXRIqRTGWFNoBT"/>
-                        </Overdrive>
-                    </a>
-                </Link>
-                <Link href="/character?id=zoidberg&name=Zoidberg&image=6xL1j1OQDC4VLBBLieN7">
-                    <a>
-                        <Overdrive id="zoidberg">
-                            <img {...image} src="https://cdn.filestackcontent.com/6xL1j1OQDC4VLBBLieN7"/>
-                        </Overdrive>
-                    </a>
-                </Link>
+                {characters.map(character => (
+                    <Link key={Math.random()}
+                          href={`/character?id=${character.id}&name=${character.name}&image=${character.image}`}>
+                        <a>
+                            <Overdrive id={character.id}>
+                                <img {...image} src={`https://cdn.filestackcontent.com/${character.image}`}/>
+                            </Overdrive>
+                        </a>
+                    </Link>
+                ))}
+
+                <p>
+                    <button onClick={this.shuffleCharacters.bind(this)}>Shuffle</button>
+                </p>
+
                 <p>
                     This is a small demo of <strong><em>react-overdrive</em></strong>, creating a magic-move experience
                     while routing.
@@ -84,5 +91,6 @@ class page extends React.Component {
         );
     }
 }
+
 
 export default page;
