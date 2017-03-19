@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-overdrive": "file:../../",
+    "react-overdrive": "^0.0.1",
     "react-router-dom": "^4.0.0"
   },
   "devDependencies": {
