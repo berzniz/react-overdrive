@@ -1,19 +1,55 @@
 {
   "name": "react-overdrive",
   "version": "0.0.1",
-  "description": "React Overdrive",
+  "description": "Super easy magic-move transitions for React apps",
+  "main": "lib/Overdrive.min.js",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "build": "webpack --env build",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "test": "echo We need some tests, I know"
   },
-  "keywords": [],
-  "author": "Tal Bereznitskey <berzniz@gmail.com> (http://berzniz.com/)",
-  "license": "ISC",
-  "dependencies": {
-    "glamor": "^2.20.24",
-    "next": "^2.0.0-beta",
+  "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
-  }
+  },
+  "devDependencies": {
+    "babel": "6.5.2",
+    "babel-core": "6.22.1",
+    "babel-loader": "6.2.10",
+    "babel-plugin-add-module-exports": "0.1.2",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "6.x.x",
+    "babel-preset-es2017": "^6.16.0",
+    "babel-preset-react": "6.x.x",
+    "babel-runtime": "^6.23.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "2.2.1",
+    "yargs": "6.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/berzniz/react-overdrive.git"
+  },
+  "keywords": [
+    "magic-move",
+    "animations",
+    "transitions",
+    "overdrive",
+    "react",
+    "reactjs",
+    "react-router",
+    "nextjs"
+  ],
+  "author": "Tal Bereznitskey",
+  "license": "MIT"
 }

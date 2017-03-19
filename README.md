@@ -1,20 +1,32 @@
 # react-overdrive
 Super easy magic-move transitions for React apps
 
-**This is NOT production ready (but will be, stay tuned), feel free to play**
+## Demo(s)
 
-# Demo
-![Overdrive Demo](static/overdrive.gif "Demo")
+1. [Page transitions](https://overdrive-demo.now.sh)
+![Overdrive Demo](assets/overdrive.gif "Demo")
 
-The demo can be seen here: https://overdrive-demo.now.sh
+2. [Image Gallery with next.js](https://nextgram-overdrive.now.sh)
+![Overdrive Demo](assets/nextgram-overdrive.gif "Demo")
 
-# Usage
+3. [With React Router](https://overdrive-rr4.now.sh)
+ ![Overdrive Demo](assets/rr-overdrive.gif "Demo")
+
+## Install 
+
+```
+npm install react-overdrive --save
+```
+
+## Usage
+
+### Example with routing:
 
 Wrap any element (not just images) in a `<Overdrive id=""></Overdrive>` component. Add the same `id` to create a transition between the elements.
 
 On `page1.js`:
 ```
-import Overdrive from './lib/overdrive'
+import Overdrive from 'react-overdrive'
 
 const pageA = (props) => (
   <div>
@@ -28,7 +40,7 @@ const pageA = (props) => (
 
 On `page2.js`:
 ```
-import Overdrive from './lib/overdrive'
+import Overdrive from 'react-overdrive'
 
 const pageB = (props) => (
   <div>
@@ -42,15 +54,34 @@ const pageB = (props) => (
 
 Now route between the pages.
 
-# Browser Support
+### Example without routing:
 
-Tested on:
-- Chrome
-- Firefox
-- Safari
-- Mobile Safari (iOS)
-- IE (should work from IE9 and above, not tested yet)
+On `page.js`:
+```
+import Overdrive from 'react-overdrive'
 
-# Todo
-- [ ] Publish npm module
-- [ ] Add proper documentation
+const page = (props) => (
+  <div>
+    {props.loading && <Overdrive id="content"><Loader/></Overdrive>} 
+    {!props.loading && <Overdrive id="content"><Content/></Overdrive>}
+  </div>
+);
+```
+
+## API
+
+| Prop           | Description                                                                                                                  | Default Value |
+|----------------|------------------------------------------------------------------------------------------------------------------------------|---------------|
+| id             | Required. A unique string to identify the component.                                                                         |               |
+| duration       | Animation duration (in milliseconds)                                                                                         | 200           |
+| animationDelay | Add delay of calculating the mounted component position. Setting to `1` usually helps avoiding issues with window scrolling. | null          |
+
+## How does it work?
+
+A transition will be made when an `<Overdrive id="example"/>` component is unmounted and another `<Overdrive id="example"/>` is mounted not later than 100ms. 
+
+The transition is made by cloning the unmounted and mounted components, adding them with `absolute` position and CSS transformed from the source to the target position. 
+
+## Who made this?
+
+Tal Bereznitskey. Found me on Twitter as @ketacode at https://twitter.com/ketacode
