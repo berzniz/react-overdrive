@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+li {
+    display: inline-block;
+    width: 100px;
+}
+
+.page {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+}
+
+.circle {
+    background: #3cafe4;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.square {
+    background: #3ce4af;
+    width: 300px;
+    height: 300px;
+    float: right;
+}
