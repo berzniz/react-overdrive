@@ -4,13 +4,16 @@ Super easy magic-move transitions for React apps
 ## Demo(s)
 
 1. [Page transitions](https://overdrive-demo.now.sh)
+
 ![Overdrive Demo](assets/overdrive.gif "Demo")
 
 2. [Image Gallery with next.js](https://nextgram-overdrive.now.sh)
+
 ![Overdrive Demo](assets/nextgram-overdrive.gif "Demo")
 
 3. [With React Router](https://overdrive-rr4.now.sh)
- ![Overdrive Demo](assets/rr-overdrive.gif "Demo")
+
+![Overdrive Demo](assets/rr-overdrive.gif "Demo")
 
 ## Install 
 
@@ -78,10 +81,10 @@ const page = (props) => (
 
 ## How does it work?
 
-A transition will be made when an `<Overdrive id="example"/>` component is unmounted and another `<Overdrive id="example"/>` is mounted not later than 100ms. 
+A transition is made when an `<Overdrive id="example"/>` component is unmounted and another `<Overdrive id="example"/>` is mounted not later than 100ms. 
 
 The transition is made by cloning the unmounted and mounted components, adding them with `absolute` position and CSS transformed from the source to the target position. 
 
 ## Who made this?
 
-Tal Bereznitskey. Found me on Twitter as @ketacode at https://twitter.com/ketacode
+Tal Bereznitskey. Find me on Twitter as @ketacode at https://twitter.com/ketacode
