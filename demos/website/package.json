@@ -1,0 +1,20 @@
+{
+  "name": "react-overdrive-website",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "Tal Bereznitskey <berzniz@gmail.com> (http://berzniz.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "glamor": "^2.20.24",
+    "next": "^2.0.0-beta",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-overdrive": "file:../../"
+  }
+}

@@ -1,4 +1,4 @@
-import Overdrive from '../lib/overdrive'
+import Overdrive from 'react-overdrive'
 import Link from 'next/link'
 import {css} from 'glamor'
 
@@ -7,7 +7,6 @@ const container = css({
 });
 
 const image = css({
-    boxSizing: 'border-box',
     background: '#fff',
     width: '180px',
     height: '180px',
@@ -25,7 +24,7 @@ const page = ({url}) => {
                     <img {...image} src={`https://cdn.filestackcontent.com/${url.query.image}`}/>
                 </Overdrive>
                 <h1>{url.query.name}!</h1>
-                <Link href="/"><a id="link">Back</a></Link>
+                <Link prefetch href="/"><a id="link">Back</a></Link>
             </div>
         </div>
     );

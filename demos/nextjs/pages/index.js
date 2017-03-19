@@ -1,5 +1,5 @@
 import React from 'react'
-import Overdrive from '../lib/overdrive'
+import Overdrive from 'react-overdrive'
 import Link from 'next/link'
 import {css} from 'glamor'
 
@@ -84,8 +84,6 @@ class page extends React.Component {
                 <p>
                     This is a small demo of <a href="https://github.com/berzniz/react-overdrive">react-overdrive</a>, creating a magic-move experience
                     while routing.
-                    <br/>
-                    <em>(alpha version should be out soon)</em>
                 </p>
             </div>
         );
