@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM  from 'react-dom'
 
-const defaultDuration = 200;
 const components = {};
 
 class Overdrive extends React.Component {
@@ -15,7 +14,7 @@ class Overdrive extends React.Component {
     }
 
     animate(prevPosition, prevElement) {
-        const {duration = defaultDuration} = this.props;
+        const {duration} = this.props;
 
         prevPosition.top += window.scrollY;
         const nextPosition = this.getPosition(true);
@@ -200,6 +199,10 @@ Overdrive.propTypes = {
     id: React.PropTypes.string.isRequired,
     duration: React.PropTypes.number,
     animationDelay: React.PropTypes.number
+};
+
+Overdrive.defaultProps = {
+    duration: 200
 };
 
 export default Overdrive;
