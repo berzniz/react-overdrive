@@ -15,7 +15,7 @@ Super easy magic-move transitions for React apps
 
 ![Overdrive Demo](assets/rr-overdrive.gif "Demo")
 
-## Install 
+## Install
 
 ```
 npm install react-overdrive --save
@@ -28,7 +28,7 @@ npm install react-overdrive --save
 Wrap any element (not just images) in a `<Overdrive id=""></Overdrive>` component. Add the same `id` to create a transition between the elements.
 
 On `page1.js`:
-```
+```js
 import Overdrive from 'react-overdrive'
 
 const pageA = (props) => (
@@ -42,7 +42,7 @@ const pageA = (props) => (
 ```
 
 On `page2.js`:
-```
+```js
 import Overdrive from 'react-overdrive'
 
 const pageB = (props) => (
@@ -60,12 +60,12 @@ Now route between the pages.
 ### Example without routing:
 
 On `page.js`:
-```
+```js
 import Overdrive from 'react-overdrive'
 
 const page = (props) => (
   <div>
-    {props.loading && <Overdrive id="content"><Loader/></Overdrive>} 
+    {props.loading && <Overdrive id="content"><Loader/></Overdrive>}
     {!props.loading && <Overdrive id="content"><Content/></Overdrive>}
   </div>
 );
@@ -81,9 +81,9 @@ const page = (props) => (
 
 ## How does it work?
 
-A transition is made when an `<Overdrive id="example"/>` component is unmounted and another `<Overdrive id="example"/>` is mounted not later than 100ms. 
+A transition is made when an `<Overdrive id="example"/>` component is unmounted and another `<Overdrive id="example"/>` is mounted not later than 100ms.
 
-The transition is made by cloning the unmounted and mounted components, adding them with `absolute` position and CSS transformed from the source to the target position. 
+The transition is made by cloning the unmounted and mounted components, adding them with `absolute` position and CSS transformed from the source to the target position.
 
 ## Who made this?
 
