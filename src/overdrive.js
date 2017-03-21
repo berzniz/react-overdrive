@@ -17,7 +17,7 @@ class Overdrive extends React.Component {
     animate(prevPosition, prevElement) {
         const {duration = defaultDuration} = this.props;
 
-        prevPosition.top += window.scrollY;
+        prevPosition.top += (window.pageYOffset || document.documentElement.scrollTop);
         const nextPosition = this.getPosition(true);
         const noTransform = 'scaleX(1) scaleY(1) translateX(0px) translateY(0px)';
         const targetScaleX = prevPosition.width / nextPosition.width;
@@ -171,7 +171,7 @@ class Overdrive extends React.Component {
         const marginTop = parseInt(computedStyle.marginTop, 10);
         const marginLeft = parseInt(computedStyle.marginLeft, 10);
         return {
-            top: (rect.top - marginTop) + ((addOffset ? 1 : 0) * window.scrollY),
+            top: (rect.top - marginTop) + ((addOffset ? 1 : 0) * (window.pageYOffset || document.documentElement.scrollTop)),
             left: (rect.left - marginLeft),
             width: rect.width,
             height: rect.height,
