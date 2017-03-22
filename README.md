@@ -85,6 +85,14 @@ A transition is made when an `<Overdrive id="example"/>` component is unmounted 
 
 The transition is made by cloning the unmounted and mounted components, adding them with `absolute` position and CSS transformed from the source to the target position.
 
+## Sponsors
+
+Thanks to the following companies for generously providing their services/products to help improve this project:
+
+<img src="assets/browserstack-logo.png" width="200">
+
+Thanks to [BrowserStack](https://browserstack.com/) for providing cross-browser testing
+
 ## Who made this?
 
 Tal Bereznitskey. Find me on Twitter as @ketacode at https://twitter.com/ketacode
