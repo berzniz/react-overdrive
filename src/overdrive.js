@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM  from 'react-dom'
 
+const renderSubtreeIntoContainer = ReactDOM.unstable_renderSubtreeIntoContainer;
 const components = {};
 
 class Overdrive extends React.Component {
@@ -86,10 +87,10 @@ class Overdrive extends React.Component {
         const bodyElement = document.createElement('div');
         window.document.body.appendChild(bodyElement);
         this.bodyElement = bodyElement;
-        ReactDOM.render(start, bodyElement);
+        renderSubtreeIntoContainer(this, start, bodyElement);
 
         this.animationTimeout = setTimeout(() => {
-            ReactDOM.render(end, bodyElement);
+            renderSubtreeIntoContainer(this, end, bodyElement);
             this.animationTimeout = setTimeout(this.animateEnd, duration);
         }, 0);
     }
