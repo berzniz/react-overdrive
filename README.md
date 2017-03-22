@@ -91,7 +91,7 @@ Thanks to the following companies for generously providing their services/produc
 
 Thanks to [BrowserStack](https://browserstack.com/) for providing cross-browser testing
 
-<img src="assets/browserstack-logo.svg" width="150">
+![BrowserStack](assets/browserstack-logo.png "BrowserStack")
 
 ## Who made this?
 
