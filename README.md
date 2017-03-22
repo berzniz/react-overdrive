@@ -89,9 +89,9 @@ The transition is made by cloning the unmounted and mounted components, adding t
 
 Thanks to the following companies for generously providing their services/products to help improve this project:
 
-Thanks to [BrowserStack](https://browserstack.com/) for providing cross-browser testing
+<img src="assets/browserstack-logo.png" width="200">
 
-![BrowserStack](assets/browserstack-logo.png "BrowserStack")
+Thanks to [BrowserStack](https://browserstack.com/) for providing cross-browser testing
 
 ## Who made this?
 
