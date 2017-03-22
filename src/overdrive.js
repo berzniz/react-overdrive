@@ -4,6 +4,19 @@ import ReactDOM  from 'react-dom'
 const renderSubtreeIntoContainer = ReactDOM.unstable_renderSubtreeIntoContainer;
 const components = {};
 
+const prefix = styles => {
+    const propertiesToPrefix = ['transform', 'transformOrigin', 'transition'];
+    const prefix = 'Webkit';
+    const prefixedStyles = {};
+    Object.keys(styles).forEach(property => {
+        if (propertiesToPrefix.indexOf(property) >= 0) {
+            prefixedStyles[prefix + property[0].toUpperCase() + property.slice(1)] = styles[property];
+        }
+        prefixedStyles[property] = styles[property];
+    });
+    return prefixedStyles;
+}
+
 class Overdrive extends React.Component {
 
     constructor(props) {
@@ -49,34 +62,34 @@ class Overdrive extends React.Component {
 
         const sourceEnd = React.cloneElement(prevElement, {
             key: '1',
-            style: {
+            style: prefix({
                 ...transition,
                 ...prevPosition,
                 margin: nextPosition.margin,
                 opacity: 0,
                 transform: `matrix(${1 / targetScaleX}, 0, 0, ${1 / targetScaleY}, ${-targetTranslateX}, ${-targetTranslateY})`
-            }
+            })
         });
 
         const targetStart = React.cloneElement(this.props.children, {
             key: '2',
-            style: {
+            style: prefix({
                 ...transition,
                 ...nextPosition,
                 margin: prevPosition.margin,
                 opacity: 0,
                 transform: `matrix(${targetScaleX}, 0, 0, ${targetScaleY}, ${targetTranslateX}, ${targetTranslateY})`
-            }
+            })
         });
 
         const targetEnd = React.cloneElement(this.props.children, {
             key: '2',
-            style: {
+            style: prefix({
                 ...transition,
                 ...nextPosition,
                 opacity: 1,
                 transform: noTransform
-            }
+            })
         });
 
         const start = <div>{sourceStart}{targetStart}</div>;
