@@ -40,12 +40,12 @@ class Overdrive extends React.Component {
 
         const sourceStart = React.cloneElement(prevElement, {
             key: '1',
-            style: {
+            style: prefix({
                 ...transition,
                 ...prevPosition,
                 opacity: 1,
                 transform: noTransform
-            }
+            })
         });
 
         const sourceEnd = React.cloneElement(prevElement, {
