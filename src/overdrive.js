@@ -1,21 +1,9 @@
 import React from 'react'
 import ReactDOM  from 'react-dom'
+import prefix from './prefix'
 
 const renderSubtreeIntoContainer = ReactDOM.unstable_renderSubtreeIntoContainer;
 const components = {};
-
-const prefix = styles => {
-    const propertiesToPrefix = ['transform', 'transformOrigin', 'transition'];
-    const prefix = 'Webkit';
-    const prefixedStyles = {};
-    Object.keys(styles).forEach(property => {
-        if (propertiesToPrefix.indexOf(property) >= 0) {
-            prefixedStyles[prefix + property[0].toUpperCase() + property.slice(1)] = styles[property];
-        }
-        prefixedStyles[property] = styles[property];
-    });
-    return prefixedStyles;
-}
 
 class Overdrive extends React.Component {
 
