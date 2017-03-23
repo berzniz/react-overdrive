@@ -1,5 +1,5 @@
 const propertiesToPrefix = ['transform', 'transformOrigin', 'transition'];
-const prefix = 'Webkit';
+const webkitPrefix = 'Webkit';
 
 const prefix = styles => {
     const prefixedStyles = {};
@@ -8,7 +8,7 @@ const prefix = styles => {
         const property = styleProperties[i];
         for (let i = 0; i < propertiesToPrefix.length; i++) {
             if (propertiesToPrefix[i] === property) {
-                const prefixedProperty = prefix + property[0].toUpperCase() + property.slice(1);
+                const prefixedProperty = webkitPrefix + property[0].toUpperCase() + property.slice(1);
                 prefixedStyles[prefixedProperty] = styles[property];
             }
             prefixedStyles[property] = styles[property];
