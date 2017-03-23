@@ -1,7 +1,7 @@
 # react-overdrive
-Super easy magic-move transitions for React apps
+Super easy magic-move transitions for React apps.
 
-## Demo(s)
+## Demos
 
 1. [Page transitions](https://overdrive-demo.now.sh)
 
@@ -18,12 +18,12 @@ Super easy magic-move transitions for React apps
 ## Install
 
 ```
-npm install react-overdrive --save
+$ npm install react-overdrive --save
 ```
 
 ## Usage
 
-### Example with routing:
+### Example with routing
 
 Wrap any element (not just images) in a `<Overdrive id=""></Overdrive>` component. Add the same `id` to create a transition between the elements.
 
@@ -57,7 +57,7 @@ const pageB = (props) => (
 
 Now route between the pages.
 
-### Example without routing:
+### Example without routing
 
 On `page.js`:
 ```js
@@ -76,7 +76,7 @@ const page = (props) => (
 | Prop           | Description                                                                                                                  | Default Value |
 |----------------|------------------------------------------------------------------------------------------------------------------------------|---------------|
 | id             | Required. A unique string to identify the component.                                                                         |               |
-| duration       | Animation duration (in milliseconds)                                                                                         | 200           |
+| duration       | Animation duration (in milliseconds).                                                                                         | 200           |
 | animationDelay | Add delay of calculating the mounted component position. Setting to `1` usually helps avoiding issues with window scrolling. | null          |
 
 ## How does it work?
@@ -91,8 +91,8 @@ Thanks to the following companies for generously providing their services/produc
 
 <img src="assets/browserstack-logo.png" width="200">
 
-Thanks to [BrowserStack](https://browserstack.com/) for providing cross-browser testing
+Thanks to [BrowserStack](https://browserstack.com/) for providing cross-browser testing.
 
 ## Who made this?
 
-Tal Bereznitskey. Find me on Twitter as @ketacode at https://twitter.com/ketacode
+Tal Bereznitskey. Find me on Twitter as [@ketacode](https://twitter.com/ketacode).
