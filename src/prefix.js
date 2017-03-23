@@ -1,6 +1,7 @@
+const propertiesToPrefix = ['transform', 'transformOrigin', 'transition'];
+const prefix = 'Webkit';
+
 const prefix = styles => {
-    const propertiesToPrefix = ['transform', 'transformOrigin', 'transition'];
-    const prefix = 'Webkit';
     const prefixedStyles = {};
     const styleProperties = Object.keys(styles);
     for (let i = 0; i < styleProperties.length; i++) {
