@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM  from 'react-dom'
+import prefix from './prefix'
 
 const renderSubtreeIntoContainer = ReactDOM.unstable_renderSubtreeIntoContainer;
 const components = {};
@@ -39,44 +40,44 @@ class Overdrive extends React.Component {
 
         const sourceStart = React.cloneElement(prevElement, {
             key: '1',
-            style: {
+            style: prefix({
                 ...transition,
                 ...prevPosition,
                 opacity: 1,
                 transform: noTransform
-            }
+            })
         });
 
         const sourceEnd = React.cloneElement(prevElement, {
             key: '1',
-            style: {
+            style: prefix({
                 ...transition,
                 ...prevPosition,
                 margin: nextPosition.margin,
                 opacity: 0,
                 transform: `matrix(${1 / targetScaleX}, 0, 0, ${1 / targetScaleY}, ${-targetTranslateX}, ${-targetTranslateY})`
-            }
+            })
         });
 
         const targetStart = React.cloneElement(this.props.children, {
             key: '2',
-            style: {
+            style: prefix({
                 ...transition,
                 ...nextPosition,
                 margin: prevPosition.margin,
                 opacity: 0,
                 transform: `matrix(${targetScaleX}, 0, 0, ${targetScaleY}, ${targetTranslateX}, ${targetTranslateY})`
-            }
+            })
         });
 
         const targetEnd = React.cloneElement(this.props.children, {
             key: '2',
-            style: {
+            style: prefix({
                 ...transition,
                 ...nextPosition,
                 opacity: 1,
                 transform: noTransform
-            }
+            })
         });
 
         const start = <div>{sourceStart}{targetStart}</div>;
