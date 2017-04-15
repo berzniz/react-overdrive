@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM  from 'react-dom'
 import prefix from './prefix'
 
+
 const renderSubtreeIntoContainer = ReactDOM.unstable_renderSubtreeIntoContainer;
 const components = {};
 
@@ -184,14 +185,15 @@ class Overdrive extends React.Component {
     }
 
     render() {
-        const {id, duration, animationDelay, style = {}, ...rest} = this.props;
+        const {id, duration, animationDelay, style = {}, children, ...rest} = this.props;
         const newStyle = {
             ...style,
             opacity: (this.state.loading ? 0 : 1)
         };
+        const onlyChild = React.Children.only(children);
         return (
             <div ref={c => (this.element = c && c.firstChild)} style={newStyle} {...rest}>
-                {this.props.children}
+                {onlyChild}
             </div>
         );
     }
