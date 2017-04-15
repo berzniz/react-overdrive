@@ -185,16 +185,21 @@ class Overdrive extends React.Component {
     }
 
     render() {
-        const {id, duration, animationDelay, style = {}, children, ...rest} = this.props;
+        const {id, duration, animationDelay, style = {}, children, element, ...rest} = this.props;
         const newStyle = {
             ...style,
             opacity: (this.state.loading ? 0 : 1)
         };
         const onlyChild = React.Children.only(children);
-        return (
-            <div ref={c => (this.element = c && c.firstChild)} style={newStyle} {...rest}>
-                {onlyChild}
-            </div>
+
+        return React.createElement(
+            element,
+            {
+                ref: c => (this.element = c && c.firstChild),
+                style: newStyle,
+                ...rest,
+            },
+            onlyChild
         );
     }
 }
@@ -202,10 +207,12 @@ class Overdrive extends React.Component {
 Overdrive.propTypes = {
     id: React.PropTypes.string.isRequired,
     duration: React.PropTypes.number,
+    element: React.PropTypes.string,
     animationDelay: React.PropTypes.number
 };
 
 Overdrive.defaultProps = {
+    element: 'div',
     duration: 200
 };
 

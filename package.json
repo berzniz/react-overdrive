@@ -35,6 +35,7 @@
     "jest": "^19.0.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-test-renderer": "^15.5.4",
     "webpack": "2.2.1",
     "yargs": "6.6.0"
   },
