@@ -197,7 +197,7 @@ class Overdrive extends React.Component {
             {
                 ref: c => (this.element = c && c.firstChild),
                 style: newStyle,
-                ...rest,
+                ...rest
             },
             onlyChild
         );
