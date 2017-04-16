@@ -199,7 +199,7 @@ class page extends React.Component {
                                       prefetch
                                       href={`/character?id=${character.id}&name=${character.name}&image=${character.image}`}>
                                     <a>
-                                        <Overdrive id={character.id}
+                                        <Overdrive element="span" id={character.id}
                                                    style={{display: 'inline-block'}}>
                                             <img {...image}
                                                  src={`https://cdn.filestackcontent.com/${character.image}`}/>
