@@ -76,8 +76,8 @@ const page = (props) => (
 | Prop           | Description                                                                                                                  | Default Value |
 |----------------|------------------------------------------------------------------------------------------------------------------------------|---------------|
 | id             | Required. A unique string to identify the component.                                                                         |               |
-| element             | Declare an element to render.                                                                         | div              |
-| duration       | Animation duration (in milliseconds).                                                                                         | 200           |
+| element        | Wrapping element type.                                                                                                       | 'div'         |
+| duration       | Animation duration (in milliseconds).                                                                                        | 200           |
 | animationDelay | Add delay of calculating the mounted component position. Setting to `1` usually helps avoiding issues with window scrolling. | null          |
 
 ## How does it work?
