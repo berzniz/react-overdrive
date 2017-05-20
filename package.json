@@ -1,6 +1,6 @@
 {
   "name": "react-overdrive",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Super easy magic-move transitions for React apps",
   "main": "lib/Overdrive.min.js",
   "files": [
@@ -13,8 +13,8 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react": "^15.5.0",
+    "react-dom": "^15.5.0"
   },
   "devDependencies": {
     "babel": "6.5.2",
@@ -33,8 +33,9 @@
     "babel-preset-react": "6.x.x",
     "babel-runtime": "^6.23.0",
     "jest": "^19.0.2",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.0",
+    "react-dom": "^15.5.0",
     "react-test-renderer": "^15.5.4",
     "webpack": "2.2.1",
     "yargs": "6.6.0"
