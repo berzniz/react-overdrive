@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM  from 'react-dom'
 import prefix from './prefix'
+import PropTypes from 'prop-types'
 
 
 const renderSubtreeIntoContainer = ReactDOM.unstable_renderSubtreeIntoContainer;
@@ -205,10 +206,10 @@ class Overdrive extends React.Component {
 }
 
 Overdrive.propTypes = {
-    id: React.PropTypes.string.isRequired,
-    duration: React.PropTypes.number,
-    element: React.PropTypes.string,
-    animationDelay: React.PropTypes.number
+    id: PropTypes.string.isRequired,
+    duration: PropTypes.number,
+    element: PropTypes.string,
+    animationDelay: PropTypes.number
 };
 
 Overdrive.defaultProps = {
