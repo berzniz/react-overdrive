@@ -1,7 +1,6 @@
 ## 0.0.6 (May 20, 2017)
 
-* Upgrade React and use `prop-types` npm package ([@na-ji](https://github.com/na-ji
-) in [#26](https://github.com/berzniz/react-overdrive/pull/26))
+* Upgrade React and use `prop-types` npm package ([@na-ji](https://github.com/na-ji) in [#26](https://github.com/berzniz/react-overdrive/pull/26))
 
 ## 0.0.5 (April 16, 2017)
 
