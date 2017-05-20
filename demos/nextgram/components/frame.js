@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Overdrive from 'react-overdrive'
 
 export default ({ id }) => (
-  <Overdrive id={id} animationDelay={1} duration={500} style={{display: 'inline-block'}}>
+  <Overdrive id={id.toString()} animationDelay={1} duration={500} style={{display: 'inline-block'}}>
     <div className='photo'>
 
       <div className='image'>

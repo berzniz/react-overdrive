@@ -56,7 +56,7 @@ export default class extends React.Component {
           photos
             .filter((id) => (id !== url.query.photoId))
             .map((id) => (
-              <Overdrive key={id} id={id} animationDelay={1} style={{display: 'inline-block'}}>
+              <Overdrive key={id} id={id.toString()} animationDelay={1} style={{display: 'inline-block'}}>
                 <div className='photo'>
                   <a
                     className='photoLink'
