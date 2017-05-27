@@ -101,6 +101,7 @@ class Overdrive extends React.Component {
     animateEnd() {
         this.animationTimeout = null;
         this.setState({loading: false});
+        this.props.onAnimationEnd && this.props.onAnimationEnd();
         window.document.body.removeChild(this.bodyElement);
     }
 
@@ -209,7 +210,8 @@ Overdrive.propTypes = {
     id: PropTypes.string.isRequired,
     duration: PropTypes.number,
     element: PropTypes.string,
-    animationDelay: PropTypes.number
+    animationDelay: PropTypes.number,
+    onAnimationEnd: PropTypes.func
 };
 
 Overdrive.defaultProps = {
