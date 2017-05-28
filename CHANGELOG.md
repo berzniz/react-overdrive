@@ -1,3 +1,7 @@
+## 0.0.7 (May 29, 2017)
+
+* Added AnimationEnd Event ([@vasco-santos](https://github.com/vasco-santos) in [#28](https://github.com/berzniz/react-overdrive/pull/28))
+
 ## 0.0.6 (May 20, 2017)
 
 * Upgrade React and use `prop-types` npm package ([@na-ji](https://github.com/na-ji) in [#26](https://github.com/berzniz/react-overdrive/pull/26))
