@@ -1,6 +1,6 @@
 {
   "name": "react-overdrive",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Super easy magic-move transitions for React apps",
   "main": "lib/Overdrive.min.js",
   "files": [
