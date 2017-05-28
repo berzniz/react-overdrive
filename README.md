@@ -79,6 +79,7 @@ const page = (props) => (
 | element        | Wrapping element type.                                                                                                       | 'div'         |
 | duration       | Animation duration (in milliseconds).                                                                                        | 200           |
 | animationDelay | Add delay of calculating the mounted component position. Setting to `1` usually helps avoiding issues with window scrolling. | null          |
+| onAnimationEnd | Event dispatched when the animation has finished.                                                                            | null          |
 
 ## How does it work?
 
