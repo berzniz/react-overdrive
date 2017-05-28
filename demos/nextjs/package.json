@@ -15,6 +15,6 @@
     "next": "^2.0.0",
     "react": "^15.5.0",
     "react-dom": "^15.5.0",
-    "react-overdrive": "^0.0.6"
+    "react-overdrive": "^0.0.7"
   }
 }
