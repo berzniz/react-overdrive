@@ -20,8 +20,7 @@ class Overdrive extends React.Component {
     animate(prevPosition, prevElement) {
         const {duration} = this.props;
 
-        prevPosition.top += (window.pageYOffset || document.documentElement.scrollTop);
-        const nextPosition = this.getPosition(true);
+        const nextPosition = this.getPosition();
         const noTransform = 'scaleX(1) scaleY(1) translateX(0px) translateY(0px)';
         const targetScaleX = prevPosition.width / nextPosition.width;
         const targetScaleY = prevPosition.height / nextPosition.height;
@@ -168,21 +167,21 @@ class Overdrive extends React.Component {
         this.onShow();
     }
 
-    getPosition(addOffset) {
+    getPosition() {
         const node = this.element;
         const rect = node.getBoundingClientRect();
         const computedStyle = getComputedStyle(node);
         const marginTop = parseInt(computedStyle.marginTop, 10);
         const marginLeft = parseInt(computedStyle.marginLeft, 10);
         return {
-            top: (rect.top - marginTop) + ((addOffset ? 1 : 0) * (window.pageYOffset || document.documentElement.scrollTop)),
-            left: (rect.left - marginLeft),
+            top: rect.top - marginTop,
+            left: rect.left - marginLeft,
             width: rect.width,
             height: rect.height,
             margin: computedStyle.margin,
             padding: computedStyle.padding,
             borderRadius: computedStyle.borderRadius,
-            position: 'absolute'
+            position: 'fixed'
         };
     }
 
