@@ -1,3 +1,7 @@
+## 0.0.8 (July 23, 2017)
+
+* Added TypeScript definitions ([@sbking](https://github.com/sbking) in [#33](https://github.com/berzniz/react-overdrive/pull/33))
+
 ## 0.0.7 (May 29, 2017)
 
 * Added AnimationEnd Event ([@vasco-santos](https://github.com/vasco-santos) in [#28](https://github.com/berzniz/react-overdrive/pull/28))
