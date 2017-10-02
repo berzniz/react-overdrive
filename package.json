@@ -13,8 +13,8 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "react": "^15.5.0",
-    "react-dom": "^15.5.0"
+    "react": "^15.5.0 || ^16.0.0",
+    "react-dom": "^15.5.0 || ^16.0.0"
   },
   "devDependencies": {
     "babel": "6.5.2",
