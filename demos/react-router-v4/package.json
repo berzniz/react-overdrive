@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^15.5.0",
-    "react-dom": "^15.5.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-overdrive": "^0.0.7",
     "react-router-dom": "^4.0.0"
   },
