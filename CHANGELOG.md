@@ -1,3 +1,7 @@
+## 0.0.9 (October 3, 2017)
+
+* React 16 support ([@knpwrs](https://github.com/knpwrs) in [#37](https://github.com/berzniz/react-overdrive/pull/37))
+
 ## 0.0.8 (July 23, 2017)
 
 * Added TypeScript definitions ([@sbking](https://github.com/sbking) in [#33](https://github.com/berzniz/react-overdrive/pull/33))
