@@ -1,6 +1,6 @@
 {
   "name": "react-overdrive",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Super easy magic-move transitions for React apps",
   "main": "lib/Overdrive.min.js",
   "files": [
@@ -8,7 +8,7 @@
     "src"
   ],
   "scripts": {
-    "build": "NODE_ENV=production npm test && webpack --env build",
+    "build": "npm test && NODE_ENV=production webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
     "test": "jest"
   },
