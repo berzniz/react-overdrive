@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "glamor": "^2.20.24",
-    "next": "^2.0.0",
+    "next": "^4.2.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-overdrive": "^0.0.7"
