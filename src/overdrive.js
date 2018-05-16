@@ -18,7 +18,7 @@ class Overdrive extends React.Component {
     }
 
     animate(prevPosition, prevElement) {
-        const {duration} = this.props;
+        const {duration, easing} = this.props;
 
         prevPosition.top += (window.pageYOffset || document.documentElement.scrollTop);
         const nextPosition = this.getPosition(true);
@@ -36,7 +36,7 @@ class Overdrive extends React.Component {
         }
 
         const transition = {
-            transition: `transform ${duration / 1000}s, opacity ${duration / 1000}s`,
+            transition: `transform ${duration / 1000}s ${easing}, opacity ${duration / 1000}s ${easing}`,
             transformOrigin: '0 0 0'
         };
 
@@ -209,6 +209,7 @@ class Overdrive extends React.Component {
 Overdrive.propTypes = {
     id: PropTypes.string.isRequired,
     duration: PropTypes.number,
+    easing: PropTypes.string,
     element: PropTypes.string,
     animationDelay: PropTypes.number,
     onAnimationEnd: PropTypes.func
@@ -216,7 +217,8 @@ Overdrive.propTypes = {
 
 Overdrive.defaultProps = {
     element: 'div',
-    duration: 200
+    duration: 200,
+    easing: ''
 };
 
 export default Overdrive;
