@@ -3,6 +3,7 @@ declare module 'react-overdrive' {
   export interface Props {
     id: string
     duration?: number
+    easing?: string
     element?: string
     animationDelay?: number
     onAnimationEnd?: () => void

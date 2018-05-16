@@ -78,6 +78,7 @@ const page = (props) => (
 | id             | Required. A unique string to identify the component.                                                                         |               |
 | element        | Wrapping element type.                                                                                                       | 'div'         |
 | duration       | Animation duration (in milliseconds).                                                                                        | 200           |
+| easing         | Animation easing function.                                                                                                   | ''            |
 | animationDelay | Add delay of calculating the mounted component position. Setting to `1` usually helps avoiding issues with window scrolling. | null          |
 | onAnimationEnd | Event dispatched when the animation has finished.                                                                            | null          |
 
