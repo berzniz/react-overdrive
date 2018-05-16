@@ -62,12 +62,12 @@ export default class extends React.Component {
                     className='photoLink'
                     href={`/photo?id=${id}`}
                     onClick={(e) => this.showPhoto(e, id)}
-              >
+                  >
                     {id}
                   </a>
                 </div>
               </Overdrive>
-          ))
+            ))
         }
         <style jsx>{`
           .list {

@@ -3,31 +3,31 @@ import Link from 'next/link'
 import {css} from 'glamor'
 
 const container = css({
-    textAlign: 'center'
-});
+  textAlign: 'center'
+})
 
 const image = css({
-    background: '#fff',
-    width: '180px',
-    height: '180px',
-    borderRadius: '10px',
-    border: '1px solid #ccc',
-    padding: '5px',
-    margin: '10px'
-});
+  background: '#fff',
+  width: '180px',
+  height: '180px',
+  borderRadius: '10px',
+  border: '1px solid #ccc',
+  padding: '5px',
+  margin: '10px'
+})
 
 const page = ({url}) => {
-    return (
-        <div>
-            <div {...container}>
-                <Overdrive id={url.query.id}>
-                    <img {...image} src={`https://cdn.filestackcontent.com/${url.query.image}`}/>
-                </Overdrive>
-                <h1>{url.query.name}!</h1>
-                <Link prefetch href="/"><a id="link">Back</a></Link>
-            </div>
-        </div>
-    );
-};
+  return (
+    <div>
+      <div {...container}>
+        <Overdrive id={url.query.id}>
+          <img {...image} src={`https://cdn.filestackcontent.com/${url.query.image}`} />
+        </Overdrive>
+        <h1>{url.query.name}!</h1>
+        <Link prefetch href='/'><a id='link'>Back</a></Link>
+      </div>
+    </div>
+  )
+}
 
-export default page;
+export default page

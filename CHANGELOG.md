@@ -1,3 +1,7 @@
+## 0.0.10 (May 16, 2018)
+
+* Added support for custom easing ([@pizza3](https://github.com/pizza3) in [#46](https://github.com/berzniz/react-overdrive/pull/46))
+
 ## 0.0.9 (October 3, 2017)
 
 * React 16 support ([@knpwrs](https://github.com/knpwrs) in [#37](https://github.com/berzniz/react-overdrive/pull/37))
