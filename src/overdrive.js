@@ -100,6 +100,7 @@ class Overdrive extends React.Component {
     this.animationTimeout = null
     this.setState({ loading: false })
     this.props.onAnimationEnd && this.props.onAnimationEnd()
+    ReactDOM.unmountComponentAtNode(this.bodyElement)
     window.document.body.removeChild(this.bodyElement)
   }
 
