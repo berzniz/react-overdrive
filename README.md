@@ -76,6 +76,8 @@ const page = (props) => (
 | Prop           | Description                                                                                                                  | Default Value |
 |----------------|------------------------------------------------------------------------------------------------------------------------------|---------------|
 | id             | Required. A unique string to identify the component.                                                                         |               |
+| tag            | A unique string which servers as a sub-id.                                                                                   |               |
+| acceptFrom     | A array of tags. Only these tags can transition *to* this component                                                          |               |
 | element        | Wrapping element type.                                                                                                       | 'div'         |
 | duration       | Animation duration (in milliseconds).                                                                                        | 200           |
 | easing         | Animation easing function.                                                                                                   | ''            |

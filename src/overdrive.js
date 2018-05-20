@@ -104,18 +104,23 @@ class Overdrive extends React.Component {
   }
 
   onHide () {
-    const { id } = this.props
+    const { id, tag = '__overdrive-default' } = this.props
     const prevElement = React.cloneElement(this.props.children)
     const prevPosition = this.getPosition()
-    components[id] = {
+
+    if (!components[id]) {
+      components[id] = {}
+    }
+
+    components[id][tag] = {
       prevPosition,
       prevElement
     }
 
     this.clearAnimations()
 
-    setTimeout(() => {
-      components[id] = false
+    components[id][tag]['timeout'] = setTimeout(() => {
+      delete components[id][tag]
     }, 100)
   }
 
@@ -124,18 +129,29 @@ class Overdrive extends React.Component {
       return
     }
     this.onShowLock = true
-    const { id, animationDelay } = this.props
+    const { id, animationDelay, acceptFrom } = this.props
     if (components[id]) {
-      const { prevPosition, prevElement } = components[id]
-      components[id] = false
-      if (animationDelay) {
-        this.animationDelayTimeout = setTimeout(this.animate.bind(this, prevPosition, prevElement), animationDelay)
-      } else {
-        this.animate(prevPosition, prevElement)
+      for (const tag in components[id]) {
+        const {prevPosition, prevElement} = components[id][tag]
+        if (!acceptFrom || acceptFrom.includes(tag)) {
+          Overdrive.deleteCachedComponents(id)
+          if (animationDelay) {
+            this.animationDelayTimeout = setTimeout(this.animate.bind(this, prevPosition, prevElement), animationDelay)
+          } else {
+            this.animate(prevPosition, prevElement)
+          }
+          return
+        }
       }
-    } else {
-      this.setState({ loading: false })
     }
+    this.setState({ loading: false })
+  }
+
+  static deleteCachedComponents (id) {
+    for (const tag in components[id]) {
+      clearTimeout(components[id][tag].timeout)
+    }
+    delete components[id]
   }
 
   componentDidMount () {
@@ -183,7 +199,7 @@ class Overdrive extends React.Component {
   }
 
   render () {
-    const { id, duration, animationDelay, style = {}, children, element, ...rest } = this.props
+    const { id, duration, animationDelay, acceptFrom, tag, style = {}, children, element, ...rest } = this.props
     const newStyle = {
       ...style,
       opacity: (this.state.loading ? 0 : 1)
@@ -204,6 +220,7 @@ class Overdrive extends React.Component {
 
 Overdrive.propTypes = {
   id: PropTypes.string.isRequired,
+  acceptFrom: PropTypes.arrayOf(PropTypes.string.isRequired),
   duration: PropTypes.number,
   easing: PropTypes.string,
   element: PropTypes.string,
