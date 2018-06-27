@@ -2,7 +2,7 @@
 
 declare module 'react-overdrive' {
   export interface Props {
-    id: string | number
+    id: string
     duration?: number
     easing?: string
     element?: string
