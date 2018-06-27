@@ -1,17 +1,21 @@
 {
   "name": "react-overdrive",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Super easy magic-move transitions for React apps",
   "main": "lib/Overdrive.min.js",
   "files": [
     "lib",
-    "src"
+    "src",
+    "index.d.ts"
   ],
   "scripts": {
     "build": "standard && npm test && NODE_ENV=production webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
     "test": "jest",
     "standard": "standard"
+  },
+  "dependencies": {
+    "@types/react": "^15.5.0 || ^16.0.0"
   },
   "peerDependencies": {
     "react": "^15.5.0 || ^16.0.0",
@@ -46,6 +50,7 @@
     "type": "git",
     "url": "https://github.com/berzniz/react-overdrive.git"
   },
+  "types": "./index.d.ts",
   "keywords": [
     "magic-move",
     "animations",
