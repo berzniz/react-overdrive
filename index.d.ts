@@ -1,16 +1,17 @@
+///<reference types="react" />
+
 declare module 'react-overdrive' {
-  import {Component, CSSProperties} from 'react'
   export interface Props {
-    id: string
+    id: string | number
     duration?: number
     easing?: string
     element?: string
     animationDelay?: number
     onAnimationEnd?: () => void
-    style?: CSSProperties
+    style?: React.CSSProperties
   }
   export interface State {
     loading: boolean
   }
-  export default class Overdrive extends Component<Props, State> {}
+  export default class Overdrive extends React.Component<Props, State> { }
 }
