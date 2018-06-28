@@ -23,6 +23,8 @@ $ npm install react-overdrive --save
 
 ## Usage
 
+**Note:** If you're using TypeScript, you will need to `npm install -D @types/react`.
+
 ### Example with routing
 
 Wrap any element (not just images) in a `<Overdrive id=""></Overdrive>` component. Add the same `id` to create a transition between the elements.
