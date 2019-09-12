@@ -5,9 +5,9 @@ const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
 const path = require('path')
 const env = require('yargs').argv.env // use --env with webpack 2
 
-let libraryName = 'Overdrive'
+const libraryName = 'Overdrive'
 
-let plugins = []
+const plugins = []
 let outputFile
 
 if (env === 'build') {
@@ -34,8 +34,8 @@ const config = {
         loader: 'babel-loader',
         exclude: /(node_modules|bower_components)/,
         query: {
-          'presets': ['react', ['es2015', { 'modules': false }], 'es2017'],
-          'plugins': [
+          presets: ['react', ['es2015', { modules: false }], 'es2017'],
+          plugins: [
             'transform-runtime',
             'transform-decorators-legacy',
             'transform-class-properties',
@@ -46,7 +46,7 @@ const config = {
     ]
   },
   externals: {
-    'react': {
+    react: {
       root: 'React',
       commonjs2: 'react',
       commonjs: 'react',
