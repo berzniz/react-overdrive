@@ -2,7 +2,7 @@
   "name": "nextgram",
   "private": true,
   "dependencies": {
-    "next": "^4.2.3",
+    "next": "^9.3.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-overdrive": "^0.0.7"
